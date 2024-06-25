@@ -1,4 +1,3 @@
-import { blue } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -55,22 +54,14 @@ const linkDefault = {
 const NavBar = (props) => {
 
     return <> 
-    
-        
-            
-            <Nav breakpoints={props.breakpoints} >
-                <Logo style={{color: 'withe'}}>{props.LogoTitle}</Logo>
-                <Menu breakpoints={props.breakpoints}>
-                    <MenuItem><Link style={{...linkDefault}} to="/">Inicio</Link></MenuItem>
-                    <MenuItem><Link style={{...linkDefault}} to="/login">Login</Link></MenuItem>
-                    <MenuItem><Link style={{...linkDefault}} to="/produtos">Produtos</Link></MenuItem>
-                </Menu>
-            </Nav>
-
-            
-            
-            
-       
+        <Nav breakpoints={props.breakpoints} >
+            <Logo style={{color: 'withe'}}>{props.LogoTitle}</Logo>
+            <Menu breakpoints={props.breakpoints}>
+                <MenuItem><Link style={{...linkDefault}} to="/">Inicio</Link></MenuItem>
+                <MenuItem><Link style={{...linkDefault}} to="/login">Login</Link></MenuItem>
+                <MenuItem><Link style={{...linkDefault}} to="/produtos">Produtos</Link></MenuItem>
+            </Menu>
+        </Nav>
     </>
 };
 
