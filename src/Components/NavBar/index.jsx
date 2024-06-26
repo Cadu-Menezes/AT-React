@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Nav = styled.nav`
     background-color: #333;
+    width: 100%;
     color: white;
     padding: 1rem;
     display: flex;
@@ -33,7 +34,7 @@ const Menu = styled.ul`
    
     @media(min-width: ${(props) => props.breakpoints.small}){
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-end;
         width: 70%;
     }
 `;
@@ -58,7 +59,6 @@ const NavBar = (props) => {
             <Logo style={{color: 'withe'}}>{props.LogoTitle}</Logo>
             <Menu breakpoints={props.breakpoints}>
                 <MenuItem><Link style={{...linkDefault}} to="/">Inicio</Link></MenuItem>
-                <MenuItem><Link style={{...linkDefault}} to="/login">Login</Link></MenuItem>
                 <MenuItem><Link style={{...linkDefault}} to="/produtos">Produtos</Link></MenuItem>
             </Menu>
         </Nav>
