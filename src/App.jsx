@@ -18,7 +18,7 @@ function App() {
   return (
     <NativeBaseProvider>
       <Router>
-        <NavBar breakpoints={breakpoints} LogoTitle={"Caduzin"} />
+        {/* <NavBar breakpoints={breakpoints} LogoTitle={"Caduzin"} /> */}
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route 

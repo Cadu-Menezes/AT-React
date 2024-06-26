@@ -23,7 +23,8 @@ const theme = createTheme({
 
 const StyledContainer = styled.div`
   background-color: #C2C2C2;
-  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   height: 100vh;
   color: black;
   padding: 1rem;
@@ -34,6 +35,9 @@ const StyledContainer = styled.div`
 
   @media(min-width: ${(props) => props.breakpoints.small}){
     flex-direction: row;
+    max-width: 100%;
+    overflow-x: hidden;
+
   }
 `;
 
