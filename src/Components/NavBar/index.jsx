@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Avatar from "../Avatar";
 
 const Nav = styled.nav`
     background-color: #333;
@@ -18,9 +19,8 @@ const Nav = styled.nav`
     }
 `;
 
-const Logo = styled.div`
-    font-size: 1.5rem;
-    color: white; 
+const Logo = styled.img`
+    height: 100px; 
     ${(props) => props.style}
 `;
 
@@ -57,11 +57,12 @@ const NavBar = (props) => {
 
     return <> 
         <Nav breakpoints={props.breakpoints} >
-            <Logo style={{color: 'withe'}}>{props.LogoTitle}</Logo>
+            <Logo src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYW1Q7NQ7qq8U_HPCxh3SFHKBK-RJC0mKh6Q&s" alt="Logo" />
             <Menu breakpoints={props.breakpoints}>
                 <MenuItem><Link style={{...linkDefault}} to="/">Inicio</Link></MenuItem>
                 <MenuItem><Link style={{...linkDefault}} to="/produtos">Produtos</Link></MenuItem>
             </Menu>
+            <Avatar src="https://tm.ibxk.com.br/2024/02/27/27184211661338.jpg?ims=1200x675" alt="Avatar do usuário" size={40} />
         </Nav>
     </>
 };

@@ -5,10 +5,10 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Container as MuiContainer } from '@mui/material';
-import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import AlertMessage from '../../Components/AlertMessage';
+import LembrarMeCheck from '../../Components/CheckBox';
 
 const theme = createTheme({
   palette: {
@@ -37,7 +37,6 @@ const StyledContainer = styled.div`
     flex-direction: row;
     max-width: 100%;
     overflow-x: hidden;
-
   }
 `;
 
@@ -57,10 +56,11 @@ const StyledForm = styled(Box)`
 `;
 
 const Login = (props) => {
-
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false); // Estado para lembrar-me
+  const [alerta, setAlerta] = useState(null);
 
   const handleLogin = (event) => {
     event.preventDefault(); 
@@ -69,7 +69,11 @@ const Login = (props) => {
       props.setIsAuthenticated(true);
       navigate("/");
     } else {
-      alert("Por favor, preencha os campos de email e senha.");
+      setAlerta({
+        severidade: "error",
+        titulo: "Erro de autenticação",
+        mensagem: "Por favor, preencha os campos de email e senha."
+      });
     }
   };
 
@@ -92,6 +96,16 @@ const Login = (props) => {
           <Typography variant="h5" component="div" gutterBottom>
             {props.LogoTitle}
           </Typography>
+
+          {alerta && (
+            <AlertMessage 
+              severidade={alerta.severidade} 
+              titulo={alerta.titulo} 
+              mensagem={alerta.mensagem} 
+              aoFechar={() => setAlerta(null)}
+            />
+          )}
+
           <TextField
             label="Email"
             variant="outlined"
@@ -109,6 +123,7 @@ const Login = (props) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <LembrarMeCheck rememberMe={rememberMe} setRememberMe={setRememberMe} /> {/* Checkbox adicionado aqui */}
           <Button
             variant="contained"
             color="primary"
@@ -118,6 +133,7 @@ const Login = (props) => {
           >
             Entrar
           </Button>
+          
         </StyledForm>
       </StyledContainer>
     </ThemeProvider>
