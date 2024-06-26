@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Nav = styled.nav`
     background-color: #333;
-    width: 100%;
+    max-width: 100%;
     color: white;
     padding: 1rem;
     display: flex;
@@ -14,6 +14,7 @@ const Nav = styled.nav`
 
     @media(min-width: ${(props) => props.breakpoints.small}){
         flex-direction: row;
+        max-width: 100%;
     }
 `;
 
