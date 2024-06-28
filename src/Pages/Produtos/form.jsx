@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { TextField, Button, Container, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
+const FormContainer = styled(Container)`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Form = styled.form`
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const FormProdutos = ({ addProduto }) => {
   const [name, setName] = useState('');
@@ -16,9 +32,9 @@ const FormProdutos = ({ addProduto }) => {
   };
 
   return (
-    <Container>
+    <FormContainer>
       <Typography variant="h4">Cadastrar Produto</Typography>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <TextField
           label="Nome"
           variant="outlined"
@@ -39,8 +55,8 @@ const FormProdutos = ({ addProduto }) => {
         <Button variant="contained" color="primary" type="submit">
           Cadastrar
         </Button>
-      </form>
-    </Container>
+      </Form>
+    </FormContainer>
   );
 };
 
