@@ -7,7 +7,7 @@ const AvatarContainer = styled.div`
   overflow: hidden;
 `;
 
-const AvatarImage = styled.img`
+const AvatarImagem = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -16,7 +16,7 @@ const AvatarImage = styled.img`
 const Avatar = ({ src, alt, size }) => {
   return (
     <AvatarContainer size={size}>
-      <AvatarImage src={src} alt={alt} />
+      <AvatarImagem src={src} alt={alt} />
     </AvatarContainer>
   );
 };
