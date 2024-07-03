@@ -4,22 +4,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import AlertMessage from '../../Components/AlertMessage';
 import LembrarMeCheck from '../../Components/CheckBox';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#11cb5f',
-    },
-  },
-});
 
 const StyledContainer = styled.div`
   background-color: #C2C2C2;
@@ -78,7 +66,7 @@ const Login = (props) => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+
       <StyledContainer breakpoints={props.breakpoints}>
         
         <StyledForm
@@ -136,7 +124,6 @@ const Login = (props) => {
           
         </StyledForm>
       </StyledContainer>
-    </ThemeProvider>
   );
 };
 
