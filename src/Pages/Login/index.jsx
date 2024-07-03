@@ -47,7 +47,7 @@ const Login = (props) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false); // Estado para lembrar-me
+  const [rememberMe, setRememberMe] = useState(false); 
   const [alerta, setAlerta] = useState(null);
 
   const handleLogin = (event) => {
@@ -111,7 +111,9 @@ const Login = (props) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <LembrarMeCheck rememberMe={rememberMe} setRememberMe={setRememberMe} /> {/* Checkbox adicionado aqui */}
+          
+          <LembrarMeCheck rememberMe={rememberMe} setRememberMe={setRememberMe} /> 
+          
           <Button
             variant="contained"
             color="primary"
