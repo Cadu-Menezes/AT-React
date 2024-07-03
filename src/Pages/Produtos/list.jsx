@@ -10,6 +10,10 @@ const StyledContainer = styled('div')({
   alignItems: 'center',
 });
 
+const Titulo = styled('h1')({
+
+});
+
 const StyledTableContainer = styled(TableContainer)({
   marginTop: '2rem',
   width: '100%',
@@ -21,9 +25,12 @@ const ListProdutos = ({ products }) => {
 
   return (
     <StyledContainer>
+
+      <Titulo>Cadastro de Produtos</Titulo>
+
       <Box display="flex" justifyContent="flex-end" width="100%" maxWidth="800px">
         <Button variant="contained" color="primary" onClick={() => navigate('/produtos/cadastrar')}>
-          Cadastrar Produto
+          Cadastrar
         </Button>
       </Box>
       <StyledTableContainer component={Paper}>
